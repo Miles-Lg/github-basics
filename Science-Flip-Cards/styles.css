@@ -192,6 +192,21 @@ body {
 }
 
 /* ==========================
+   FOOTER
+========================== */
+
+.footer-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.footer-form .copy-rights {
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+/* ==========================
    RESPONSIVE
 ========================== */
 
