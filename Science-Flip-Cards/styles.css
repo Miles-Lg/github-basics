@@ -1,5 +1,5 @@
 /* ==========================
-   GENERAL STYLING
+  GENERAL STYLING
 ========================== */
 
 :root {
@@ -31,12 +31,12 @@
 
 body {
   min-height: 100vh;
-  /* width: 100vw; */
+  margin: 3.5rem 0 1rem;
   background: var(--bg-color);
 }
 
 /* ==========================
-   SUBJECT TAGS
+  SUBJECT TAGS
 ========================== */
 
 .bio,
@@ -65,12 +65,12 @@ body {
 }
 
 /* ==========================
-   HEADER
+  HEADER
 ========================== */
 
-.header-form {
+/* .header-form {
   padding-top: 3.5rem;
-}
+} */
 
 .header-form #title,
 .header-form #sub-title {
@@ -88,7 +88,7 @@ body {
 }
 
 /* ==========================
-   MAIN
+  MAIN
 ========================== */
 
 .main-form {
@@ -109,10 +109,11 @@ body {
   flex-direction: column;
   gap: 5px;
   color: var(--light-blue);
+  flex-wrap: wrap;
 }
 
 .main-form .progress-bar {
-  width: 500px;
+  width: 550px;
   height: 0.7rem;
   border-radius: 1.5rem;
   background-color: var(--bg-color-box);
@@ -133,13 +134,13 @@ body {
 }
 
 /* ==========================
-   GRID
+  GRID
 ========================== */
 
 .main-form .grid-cards {
   display: grid;
-  margin-top: 2rem;
-  gap: 1rem;
+  margin-top: 5rem;
+  gap: 3rem;
   justify-content: center;
   grid-template-columns: repeat(3, minmax(250px, 350px));
   grid-auto-rows: 200px;
@@ -157,15 +158,33 @@ body {
   border-radius: 1rem;
 
   cursor: pointer;
-  transition: all 0.75s;
+  transition: all 1s;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
 }
 
-.main-form .grid-item:hover {
-  transform: translateY(-5px);
+.card {
+  display: flex;
+  position: relative;
+  transition: all 0.55s;
+}
+
+.main-form .grid-cards > .card:hover {
+  transform: translateY(-1rem);
+}
+
+.main-form .recto {
+  position: absolute;
+}
+
+.main-form .verso {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 /* ==========================
-   BUTTON
+  BUTTON
 ========================== */
 
 .main-form .btn {
@@ -192,7 +211,7 @@ body {
 }
 
 /* ==========================
-   FOOTER
+  FOOTER
 ========================== */
 
 .footer-form {
@@ -207,7 +226,7 @@ body {
 }
 
 /* ==========================
-   RESPONSIVE
+  RESPONSIVE
 ========================== */
 
 /* Tablet */
@@ -249,6 +268,8 @@ body {
   .tracker .progress-bar {
     width: auto;
     height: 3px;
-    padding: 0.5rem;
+    padding: 0.3rem;
   }
 }
+
+/* Some changes will come soon*/
