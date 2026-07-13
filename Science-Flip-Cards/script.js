@@ -11,7 +11,7 @@ cards.forEach(card => {
     if (e.target === frontFace && frontFace.style.transform === "") {
       frontFace.style.transform = "rotateY(-180deg)"
       backFace.style.transform = "rotateY(0deg)"
-      card.style.transform = "translateY(-1rem)"
+      card.style.transform = "translateY(-.5rem)"
     } else {
       clearStyle(card)
     }

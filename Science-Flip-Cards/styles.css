@@ -140,7 +140,7 @@ body {
 .main-form .grid-cards {
   display: grid;
   margin-top: 5rem;
-  gap: 3rem;
+  gap: 1.5rem;
   justify-content: center;
   grid-template-columns: repeat(3, minmax(250px, 350px));
   grid-auto-rows: 200px;
@@ -171,7 +171,7 @@ body {
 }
 
 .main-form .grid-cards > .card:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-0.5rem);
 }
 
 .main-form .recto {
