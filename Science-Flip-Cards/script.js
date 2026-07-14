@@ -1,4 +1,8 @@
 const cards = document.querySelectorAll(".card")
+const btnCheck = document.querySelector("span.check")
+const btnRead = document.querySelector("span.read")
+const score = document.querySelector("span.real-score")
+let count = 1
 
 
 cards.forEach(card => {
@@ -27,6 +31,7 @@ function isNotFlipped() {
 }
 
 
+/* Clear all the transform property */
 function clearStyle(card) {
   card.closest(".card").children[0].style.transform = ""
   card.closest(".card").children[1].style.transform = ""
@@ -34,3 +39,19 @@ function clearStyle(card) {
 }
 
 /* Some changes will come soon*/
+
+/* Add the checked class to the card if clicked */
+document.addEventListener("click", e => {
+  if (!e.target.matches("span.check")) return
+  const parent = e.target.closest(".card")
+
+  if (parent.classList.contains(".checked")) return
+  parent.classList.add("checked")
+  score.textContent = `${count}`
+  count++
+})
+
+
+function isChecked() {
+  // ...
+}
