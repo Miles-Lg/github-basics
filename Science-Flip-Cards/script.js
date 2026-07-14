@@ -12,6 +12,7 @@ cards.forEach(card => {
 
   card.addEventListener('click', e => {
     isNotFlipped()
+
     if (e.target === frontFace && frontFace.style.transform === "") {
       frontFace.style.transform = "rotateY(-180deg)"
       backFace.style.transform = "rotateY(0deg)"
@@ -51,7 +52,3 @@ document.addEventListener("click", e => {
   count++
 })
 
-
-function isChecked() {
-  // ...
-}
