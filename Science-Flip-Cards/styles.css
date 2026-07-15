@@ -18,6 +18,9 @@
 
   --physics-color: #9a3412;
   --physics-bg-color: #ffedd5;
+
+  --green: #10b981;
+  --orange: #f59e0b;
 }
 
 *,
@@ -143,8 +146,8 @@ body {
   margin-top: 5rem;
   gap: 1.5rem;
   justify-content: center;
-  grid-template-columns: repeat(3, minmax(250px, 350px));
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(3, minmax(200px, 270px));
+  grid-auto-rows: 220px;
 }
 
 .main-form .grid-item {
@@ -177,7 +180,7 @@ body {
 }
 
 .main-form .grid-cards > .card:not(.checked):hover {
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.3rem);
 }
 
 .main-form .recto {
@@ -196,7 +199,7 @@ body {
   gap: 1rem;
 }
 
-.main-form .verso .btns > span {
+.main-form .verso .btns > span.btn {
   font-size: 0.8rem;
   margin: 0;
   padding: 12px 18px;
@@ -205,6 +208,14 @@ body {
   cursor: pointer;
   background-color: var(--chemistry-color);
   color: var(--white-color);
+}
+
+.main-form .verso .btns span.check {
+  background-color: var(--green);
+}
+
+.main-form .verso .btns span.read {
+  background-color: var(--orange);
 }
 
 /* ==========================

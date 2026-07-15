@@ -16,7 +16,7 @@ cards.forEach(card => {
     if (e.target === frontFace && frontFace.style.transform === "") {
       frontFace.style.transform = "rotateY(-180deg)"
       backFace.style.transform = "rotateY(0deg)"
-      card.style.transform = "translateY(-.5rem)"
+      // card.style.transform = "translateY(-.5rem)"
     } else {
       clearStyle(card)
     }
@@ -36,7 +36,7 @@ function isNotFlipped() {
 function clearStyle(card) {
   card.closest(".card").children[0].style.transform = ""
   card.closest(".card").children[1].style.transform = ""
-  card.style.transform = ""
+  // card.style.transform = ""
 }
 
 /* Some changes will come soon*/
