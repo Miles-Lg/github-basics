@@ -1,9 +1,14 @@
 const cards = document.querySelectorAll(".card")
-const btnCheck = document.querySelector("span.check")
-const btnRead = document.querySelector("span.read")
+const btnCheck = document.querySelectorAll("span.check")
+const btnRead = document.querySelectorAll("span.read")
 const score = document.querySelector("span.real-score")
-let count = 1
+const progress = document.querySelector(".real-score")
+let count = 0
 
+
+document.addEventListener('click', e => {
+  // console.log()
+})
 
 cards.forEach(card => {
   const cardParent = card.closest(".card")
@@ -11,16 +16,22 @@ cards.forEach(card => {
   const backFace = cardParent.children[1]
 
   card.addEventListener('click', e => {
+    removeEvent(cardParent)
+    if (!(e.target.matches(".grid-item") || e.target.matches("p") || e.target.matches(".item-text"))) return
     isNotFlipped()
-
-    if (e.target === frontFace && frontFace.style.transform === "") {
-      frontFace.style.transform = "rotateY(-180deg)"
-      backFace.style.transform = "rotateY(0deg)"
-      // card.style.transform = "translateY(-.5rem)"
-    } else {
-      clearStyle(card)
-    }
+    frontFace.style.transform = "rotateY(-180deg)"
+    backFace.style.transform = "rotateY(0deg)"
   })
+})
+
+btnRead.forEach(btn => {
+  btn.addEventListener('click', isNotFlipped)
+})
+
+
+btnCheck.forEach(btn => {
+  btn.addEventListener('click', addChecked)
+  isNotFlipped()
 })
 
 
@@ -36,19 +47,27 @@ function isNotFlipped() {
 function clearStyle(card) {
   card.closest(".card").children[0].style.transform = ""
   card.closest(".card").children[1].style.transform = ""
-  // card.style.transform = ""
 }
 
-/* Some changes will come soon*/
 
 /* Add the checked class to the card if clicked */
-document.addEventListener("click", e => {
+function addChecked(e) {
+  const isTrue = e.target.closest(".card")
   if (!e.target.matches("span.check")) return
-  const parent = e.target.closest(".card")
+  if ((!isTrue && isTrue.classList.contains(".checked"))) return
+  isTrue.classList.add("checked")
+  removeEvent(isTrue)
+}
 
-  if (parent.classList.contains(".checked")) return
-  parent.classList.add("checked")
-  score.textContent = `${count}`
-  count++
-})
 
+function removeEvent(cardParent) {
+  if (!cardParent.classList.contains(".checked")) return
+  cardParent.children.removeEventListener('click')
+  // card.removeEventListener('click')
+}
+
+
+// score.textContent = `${count}`
+// count++
+
+// git & github video -> [53-54]
