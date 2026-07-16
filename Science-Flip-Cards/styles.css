@@ -89,6 +89,7 @@ body {
 
 .header-form #sub-title {
   font-size: 1.5rem;
+  display: block;
 }
 
 /* ==========================
