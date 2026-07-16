@@ -1,73 +1,48 @@
 const cards = document.querySelectorAll(".card")
 const btnCheck = document.querySelectorAll("span.check")
 const btnRead = document.querySelectorAll("span.read")
-const score = document.querySelector("span.real-score")
-const progress = document.querySelector(".real-score")
-let count = 0
+// const score = document.querySelector("span.real-score")
+// let count = 0
 
-
-document.addEventListener('click', e => {
-  // console.log()
-})
 
 cards.forEach(card => {
-  const cardParent = card.closest(".card")
-  const frontFace = cardParent.children[0]
-  const backFace = cardParent.children[1]
+  const frontFace = card.children[0]
+  const backFace = card.children[1]
 
   card.addEventListener('click', e => {
-    removeEvent(cardParent)
-    if (!(e.target.matches(".grid-item") || e.target.matches("p") || e.target.matches(".item-text"))) return
-    isNotFlipped()
-    frontFace.style.transform = "rotateY(-180deg)"
-    backFace.style.transform = "rotateY(0deg)"
+    if (e.target.closest(".check, .read")) return
+    if (card.classList.contains("checked")) return
+    closeAllCards()
+    card.classList.add("flipped")
   })
 })
 
-btnRead.forEach(btn => {
-  btn.addEventListener('click', isNotFlipped)
+document.addEventListener("click", e => {
+  if (e.target.matches(".check")) { addChecked(e) }
+  if (e.target.matches(".read")) { closeAllCards() }
+
 })
 
 
-btnCheck.forEach(btn => {
-  btn.addEventListener('click', addChecked)
-  isNotFlipped()
-})
-
-
-/* Flipped back when another card is clicked */
-function isNotFlipped() {
+/* Close a card when clicked */
+function closeAllCards() {
   cards.forEach(card => {
-    clearStyle(card)
+    closeCards(card)
   })
 }
 
 
-/* Clear all the transform property */
-function clearStyle(card) {
-  card.closest(".card").children[0].style.transform = ""
-  card.closest(".card").children[1].style.transform = ""
+/* Close all cards */
+function closeCards(card) {
+  card.classList.remove("flipped")
 }
 
 
-/* Add the checked class to the card if clicked */
+/* Add the checked class to the card */
 function addChecked(e) {
-  const isTrue = e.target.closest(".card")
   if (!e.target.matches("span.check")) return
-  if ((!isTrue && isTrue.classList.contains(".checked"))) return
-  isTrue.classList.add("checked")
-  removeEvent(isTrue)
+  const card = e.target.closest(".card")
+  if (!card) return
+  if (card.classList.contains("checked")) return
+  card.classList.add("checked")
 }
-
-
-function removeEvent(cardParent) {
-  if (!cardParent.classList.contains(".checked")) return
-  cardParent.children.removeEventListener('click')
-  // card.removeEventListener('click')
-}
-
-
-// score.textContent = `${count}`
-// count++
-
-// git & github video -> [53-54]
