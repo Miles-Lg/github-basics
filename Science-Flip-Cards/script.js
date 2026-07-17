@@ -2,7 +2,7 @@ const cards = document.querySelectorAll(".card")
 const btnCheck = document.querySelectorAll("span.check")
 const btnRead = document.querySelectorAll("span.read")
 const score = document.querySelector("span.real-score")
-const progress = document.querySelector("input#progress-bar")
+const progress = document.querySelector("div#progress-bar")
 let count = 0
 
 
@@ -48,5 +48,5 @@ function addChecked(e) {
 
   count++
   score.textContent = `${count}`
-  progress.value = `${count}`
+  progress.style.width = `${(count * 10) - 16.7}%`
 }
