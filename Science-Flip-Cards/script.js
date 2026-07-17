@@ -1,8 +1,9 @@
 const cards = document.querySelectorAll(".card")
 const btnCheck = document.querySelectorAll("span.check")
 const btnRead = document.querySelectorAll("span.read")
-// const score = document.querySelector("span.real-score")
-// let count = 0
+const score = document.querySelector("span.real-score")
+const progress = document.querySelector("input#progress-bar")
+let count = 0
 
 
 cards.forEach(card => {
@@ -20,7 +21,6 @@ cards.forEach(card => {
 document.addEventListener("click", e => {
   if (e.target.matches(".check")) { addChecked(e) }
   if (e.target.matches(".read")) { closeAllCards() }
-
 })
 
 
@@ -45,4 +45,8 @@ function addChecked(e) {
   if (!card) return
   if (card.classList.contains("checked")) return
   card.classList.add("checked")
+
+  count++
+  score.textContent = `${count}`
+  progress.value = `${count}`
 }
