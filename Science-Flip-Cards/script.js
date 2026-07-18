@@ -4,8 +4,12 @@ const btnRead = document.querySelectorAll("span.read")
 const score = document.querySelector("span.real-score")
 const progress = document.querySelector("div#progress-bar")
 const congrats = document.querySelector(".congrats")
+const cardNumber = document.querySelector(".cards-number")
 let count = 0
 let checkedCards = 0
+
+
+cardNumber.textContent = cards.length
 
 
 cards.forEach(card => {
