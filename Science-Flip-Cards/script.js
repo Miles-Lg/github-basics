@@ -3,7 +3,9 @@ const btnCheck = document.querySelectorAll("span.check")
 const btnRead = document.querySelectorAll("span.read")
 const score = document.querySelector("span.real-score")
 const progress = document.querySelector("div#progress-bar")
+const congrats = document.querySelector(".congrats")
 let count = 0
+let checkedCards = 0
 
 
 cards.forEach(card => {
@@ -15,6 +17,7 @@ cards.forEach(card => {
     if (card.classList.contains("checked")) return
     closeAllCards()
     card.classList.add("flipped")
+    showCongratsMessage()
   })
 })
 
@@ -45,8 +48,17 @@ function addChecked(e) {
   if (!card) return
   if (card.classList.contains("checked")) return
   card.classList.add("checked")
-
   count++
   score.textContent = `${count}`
-  progress.style.width = `${(count * 10) - 16.7}%`
+  progress.style.width = `${(count / cards.length) * 100}% `
+
+  checkedCards++
+  showCongratsMessage()
+}
+
+function showCongratsMessage() {
+  if (checkedCards !== cards.length) return
+  congrats.classList.remove("hidden")
+  congrats.classList.add("show")
+  closeAllCards()
 }

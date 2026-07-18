@@ -105,9 +105,10 @@ body {
 /* Tracker */
 
 .main-form .tracker {
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
   gap: 1.5rem;
+  max-width: 800px;
 }
 
 .main-form .progress {
@@ -119,7 +120,7 @@ body {
 }
 
 .tracker div.score {
-  width: fit-content;
+  max-width: fit-content;
 }
 
 .main-form .progress-bar {
@@ -130,7 +131,7 @@ body {
 
 .main-form .bar {
   accent-color: var(--green);
-  background-color: var(--light-blue);
+  background-color: var(--bg-color-box);
   height: 0.7rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -279,6 +280,21 @@ body {
 
 .main-form .btn #play-btn:active {
   opacity: 0.8;
+}
+
+.congrats.hidden {
+  display: none;
+}
+
+.congrats.show {
+  display: block;
+  background-color: var(--white-color);
+  max-width: 800px;
+  border-radius: 1rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin: 3rem auto 0;
+  line-height: 1.6;
 }
 
 /* ==========================
