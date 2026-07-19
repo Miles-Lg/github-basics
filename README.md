@@ -2,7 +2,7 @@
 
 ---
 
-This is a project i've seen on [1]**canva.com** I was looking for some design to code in order to practice my skill.
+This is a project i've seen on [1] https://www.canva.com I was looking for some design to code in order to practice my skill.
 
 I was lost in **tutorial hell**, and then decided to push myself.
 I'll make a project every week or 2 weeks, even though it's seem hard. I'll share my progress
