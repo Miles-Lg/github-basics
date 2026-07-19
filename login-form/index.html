@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validator</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -20,7 +26,7 @@
             type="text"
             placeholder="Enter username"
           />
-          <span class="error-message">Invalid username</span>
+          <span class="error-message"></span>
         </div>
 
         <div class="box">
@@ -31,7 +37,7 @@
             type="email"
             placeholder="Enter email"
           />
-          <span class="error-message">Invalid email</span>
+          <span class="error-message"></span>
         </div>
 
         <div class="box">
@@ -42,18 +48,18 @@
             type="password"
             placeholder="Enter password"
           />
-          <span class="error-message">Invalid password</span>
+          <span class="error-message"></span>
         </div>
 
         <div class="box">
-          <label for="password-conf">Confirm Password</label>
+          <label for="password-conf"></label>
           <input
             name="password-conf"
             id="password-conf"
-            type="text"
+            type="password"
             placeholder="Enter password again"
           />
-          <span class="error-message">Password doesn't match</span>
+          <span class="error-message"></span>
         </div>
 
         <div class="submit-btn">
