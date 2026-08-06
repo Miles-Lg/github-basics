@@ -52,6 +52,7 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
+  gap: 5px;
 }
 
 .cal-week {
@@ -72,7 +73,7 @@ body {
 }
 
 .cal-days div:hover,
-.cal-days.active {
+.active {
   color: #fff;
   background-color: #e98726;
 }
