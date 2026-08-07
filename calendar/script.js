@@ -8,7 +8,7 @@ days.forEach(day => {
   })
 })
 
-
+/* Remove the active class on other card for every clic*/
 function removeClass() {
   days.forEach(day => {
     day.classList.remove("active")
